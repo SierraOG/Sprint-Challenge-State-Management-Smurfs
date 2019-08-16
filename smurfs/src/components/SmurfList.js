@@ -6,6 +6,7 @@ import Smurf from './Smurf'
 const SmurfList = props => {
     return (
         <div className='smurf-list'>
+            <h2>Smurf village</h2>
             {props.smurfs.map(smurf => <Smurf key={smurf.name} smurf={smurf} />)}
         </div>
     )

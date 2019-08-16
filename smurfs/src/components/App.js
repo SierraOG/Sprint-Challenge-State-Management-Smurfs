@@ -14,11 +14,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>SMURFS! 2.0 W/ Redux</h1>
-        <button onClick={() => this.props.getSmurf()}>load smurfs</button>
-        <p>add a new smurf</p>
+        <h1>SMURFS!</h1>
+        <p>Add a new smurf to the village!</p>
         <SmurfForm />
-        <h2>Smurf Village</h2>
+        <button onClick={() => this.props.getSmurf()}>view smurf village</button>
         <SmurfList />
       </div>
     );
