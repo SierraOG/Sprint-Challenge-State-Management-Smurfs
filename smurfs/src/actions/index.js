@@ -20,10 +20,11 @@ export const getSmurf = () => dispatch => {
     .catch(err => dispatch({ type: FETCH_SMURF_FAIL, payload: err }));
 };
 
-export const addSmurf = () => dispatch => {
+export const addSmurf = (newSmurfObj) => dispatch => {
     dispatch({ type: FETCH_SMURF_START });
+    console.log('new smurf object inside actions',newSmurfObj)
     axios
-      .get('http://localhost:3333/smurfs')
+      .post('http://localhost:3333/smurfs', newSmurfObj)
       .then(res =>
           {
           console.log(res.data)

@@ -1,5 +1,9 @@
 import React, {useState} from 'react'
 
+import { connect } from 'react-redux';
+
+import {addSmurf} from '../actions'
+
 const SmurfForm = (props) => {
     const [item, setItem] = useState({name: '', age: '', height: ''})
   
@@ -10,6 +14,7 @@ const SmurfForm = (props) => {
     const submitItem = event =>{
         event.preventDefault();
         // call action
+        props.addSmurf(item)
         console.log(item)
         setItem({name: '', age: '', height: ''})
     }
@@ -41,4 +46,12 @@ const SmurfForm = (props) => {
     )
 }
 
-export default SmurfForm
+const mapStateToProps = state => {
+    return {
+      isLoading: state.isLoading,
+    };
+  };
+  export default connect(
+    mapStateToProps,
+    { addSmurf }
+  )(SmurfForm);
