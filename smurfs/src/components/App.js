@@ -17,8 +17,8 @@ class App extends Component {
         <h1>SMURFS!</h1>
         <p>Add a new smurf to the village!</p>
         <SmurfForm />
-        <button onClick={() => this.props.getSmurf()}>view smurf village</button>
         <SmurfList />
+        <button onClick={() => this.props.getSmurf()}>view smurf village</button>
       </div>
     );
   }
